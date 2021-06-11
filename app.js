@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3001
 
 // Hello World
 app.get('/', (req, res) => {
@@ -16,6 +16,9 @@ app.use('/static', express.static('public'))
 // Contact module
 const contacts = require('./routes/contacts')
 app.use('/contacts', contacts)
+
+const address = require('./routes/address')
+app.use('/address', address)
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
